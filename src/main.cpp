@@ -1,3 +1,11 @@
+/*
+Auteur      : Bilel Belhadj
+Description : le ESP32 en premier joue le role d'un point d'accees apres il affiche une page web pour l'utilisateur de remplir 
+              le nom et le mot de passe de son Wifi pour que le est32 se connecte dessus 
+Date        : 28/02/2023
+Version     : 0.0.1
+*/
+
 #include <WiFi.h>
 #include <string>
 
