@@ -91,9 +91,11 @@ void loop() {
   Serial.println("Data");
   Serial.println(line1);
 
+  //garder le previous data
   String lastSsidWifi = ssidWifiStr;
   String lastPwdWifi  = pwdWifiStr;
 
+  //recuperer les donnees dans les variables
   ssidWifiStr = line1.substring(line1.indexOf('=') + 1, line1.indexOf('&'));
   pwdWifiStr  = line1.substring(line1.lastIndexOf('=') + 1, line1.length() + 1);
 
@@ -101,7 +103,7 @@ void loop() {
   if (ssidWifiStr != lastSsidWifi || pwdWifiStr != pwdWifiStr){
     const char* ssidWifi = ssidWifiStr.c_str();
     const char* passwordWifi = pwdWifiStr.c_str();
-
+    //commencer l'essai de connection
     WiFi.mode(WIFI_STA);
     WiFi.begin(ssidWifi, passwordWifi);
     
